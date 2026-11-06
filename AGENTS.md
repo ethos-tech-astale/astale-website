@@ -8,6 +8,7 @@
 - 仕組み: Astro による静的サイト。`main` ブランチに入った変更が自動で本番公開される。
 - 正本: GitHub `ethos-tech-astale/astale-website`
 - 管理者: アステール（すべての変更は管理者の承認後に公開）
+- Wix→Cloudflare Pages の移行では、現行サイトのページ・既存の301転送・注意点（DNS/MX）の参照は `docs/wix_site_survey.md`。
 
 ## フォルダ構成（どこを触ってよいか）
 
