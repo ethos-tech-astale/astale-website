@@ -51,7 +51,9 @@ Claude Code に頼む場合は、このフォルダで Claude Code を起動し�
 | 出力ディレクトリ | `dist` |
 | 環境変数 | `NODE_VERSION` = `22`（`.nvmrc` があれば不要） |
 
-## GitHub の設定（初回のみ・推奨）
+## GitHub の設定（設定済み）
 
-- Settings → Branches → `main` に保護ルール：「PRを必須」「承認1件を必須」。管理者以外は main に直接入れられなくなります。
+- Settings → Rules → Rulesets の `protect-main`（対象: `main`）：「PRを必須」「承認1件を必須」「強制pushの禁止」「ブランチ削除の禁止」。
+- 管理者（Admin 権限）は「PRのときだけ」バイパスできます。GitHub では自分のPRを自分で承認できないため、管理者は承認なしでPRをマージできます。直接 push はできません。
 - スタッフ・Grok Bot には Write 権限（Admin は付けない）。
+- リポジトリは公開（Public）です。パスワード・APIキー・生徒の個人情報・掲載許可のない写真は、履歴を含めて絶対に置かないでください。
