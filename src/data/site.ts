@@ -10,13 +10,17 @@ export const site = {
   address: {
     region: '静岡県',
     locality: '三島市',
-    street: null as string | null, // 例: '〇〇町1-2-3 〇〇ビル2F'
+    street: '泉町3-2' as string | null, // 出典: docs/wix_site_survey.md（トップページ公開表記）。ビル名・階数は未確認
     postalCode: null as string | null, // 例: '411-0000'
   },
-  telephone: null as string | null,
+  telephone: '055-971-7579' as string | null, // 出典: docs/wix_site_survey.md（トップページ公開表記）
   /** 最寄り駅からの所要時間（例: 'JR三島駅 南口から徒歩1分'）。Web上の表記はこれに統一する */
   access: null as string | null,
-  instagram: null as string | null, // 例: 'https://www.instagram.com/xxxx/'
+  instagram: 'https://www.instagram.com/astale_art_official' as string | null, // 出典: docs/wix_site_survey.md
+  /** 公式LINE */
+  line: 'https://lin.ee/4gr1kzCK' as string | null, // 出典: docs/wix_site_survey.md
+  /** 共有時の既定画像（og:image）。public/ に置いた画像のパス（例: '/images/og-default.png'）。未定の間は null */
+  ogImage: null as string | null, // Todo: 画像未定
   /** お問い合わせ用 Google フォームの埋め込みURL（…/viewform?embedded=true） */
   contactFormUrl: null as string | null,
 };
