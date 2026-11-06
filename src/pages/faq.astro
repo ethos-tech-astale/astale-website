@@ -1,0 +1,29 @@
+---
+import Base from '../layouts/Base.astro';
+import Todo from '../components/Todo.astro';
+import { faq } from '../data/faq';
+
+const answered = faq.filter((f) => f.a);
+const jsonLd = answered.length
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: answered.map((f) => ({
+        '@type': 'Question',
+        name: f.q,
+        acceptedAnswer: { '@type': 'Answer', text: f.a },
+      })),
+    }
+  : undefined;
+---
+<Base title="よくある質問" description="アステール総合美術研究所への入会・学費・アクセスなど、よくいただくご質問。" jsonLd={jsonLd}>
+  <h1>よくある質問</h1>
+  <dl class="faq">
+    {faq.map((f) => (
+      <>
+        <dt>Q. {f.q}</dt>
+        <dd>{f.a ? <>A. {f.a}</> : <Todo>回答を src/data/faq.ts に入力</Todo>}</dd>
+      </>
+    ))}
+  </dl>
+</Base>

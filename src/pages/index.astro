@@ -1,0 +1,47 @@
+---
+import Base from '../layouts/Base.astro';
+import Todo from '../components/Todo.astro';
+import { site } from '../data/site';
+import { getNews, formatDate, isoDate } from '../lib/news';
+
+const latest = (await getNews()).slice(0, 3);
+---
+<Base title="トップ">
+  <h1>{site.name}</h1>
+  <p class="lead">静岡県三島市の美術研究所。美大・芸大受験から、おとなの教室・こどもの教室まで。</p>
+  <Todo>トップページの紹介文（3〜5行）。教室の特徴・指導の考え方・実績を、検索されやすい言葉（三島・沼津・美大受験 など）を含めて文字で書く。</Todo>
+
+  <h2>教室案内</h2>
+  <div class="cards">
+    <section class="card">
+      <h3><a href="/exam">受験生の教室</a></h3>
+      <p>美大・芸大を目指す高校生・既卒生のための教室です。</p>
+    </section>
+    <section class="card">
+      <h3><a href="/adult">おとなの教室</a></h3>
+      <p>大人の方が絵画やデッサンを学べる教室です。</p>
+    </section>
+    <section class="card">
+      <h3><a href="/kids">こどもの教室</a></h3>
+      <p>子どもたちが美術を楽しく学べる教室です。</p>
+    </section>
+  </div>
+
+  <h2>お知らせ</h2>
+  {latest.length > 0 ? (
+    <ul class="news-list">
+      {latest.map((n) => (
+        <li>
+          <time datetime={isoDate(n.data.date)}>{formatDate(n.data.date)}</time>
+          <span class="tag">{n.data.category}</span>
+          <a href={`/news/${n.id}`}>{n.data.title}</a>
+        </li>
+      ))}
+    </ul>
+  ) : <p>現在お知らせはありません。</p>}
+  <p><a href="/news">お知らせ一覧へ</a></p>
+
+  <h2>アクセス</h2>
+  <p>{site.address.region}{site.address.locality}{site.address.street}</p>
+  {site.access ? <p>{site.access}</p> : <Todo>所在地の番地と駅からの所要時間を src/data/site.ts に入力（Web上の表記を「徒歩◯分」に統一）。地図の埋め込みもここに置く。</Todo>}
+</Base>

@@ -1,0 +1,16 @@
+---
+import Base from '../layouts/Base.astro';
+import Todo from '../components/Todo.astro';
+import { site } from '../data/site';
+---
+<Base title="お問い合わせ" description="アステール総合美術研究所へのお問い合わせ・見学や体験のお申し込み。">
+  <h1>お問い合わせ</h1>
+  <p>見学・体験のお申し込み、ご質問は下記のフォームからお送りください。</p>
+  {site.telephone && <p>お電話：<a href={`tel:${site.telephone}`}>{site.telephone}</a></p>}
+
+  {site.contactFormUrl ? (
+    <iframe class="form-embed" src={site.contactFormUrl} title="お問い合わせフォーム" loading="lazy"></iframe>
+  ) : (
+    <Todo>Googleフォームを作成し、埋め込みURL（…/viewform?embedded=true）を src/data/site.ts の contactFormUrl に入力。送信テストと通知先の確認も行う。</Todo>
+  )}
+</Base>

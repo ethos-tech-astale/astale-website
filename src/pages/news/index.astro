@@ -1,0 +1,22 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getNews, formatDate, isoDate } from '../../lib/news';
+
+const items = await getNews();
+---
+<Base title="お知らせ" description="アステール総合美術研究所の講習会・教室のお知らせ。">
+  <h1>お知らせ</h1>
+  {items.length > 0 ? (
+    <ul class="news-list">
+      {items.map((n) => (
+        <li>
+          <time datetime={isoDate(n.data.date)}>{formatDate(n.data.date)}</time>
+          <span class="tag">{n.data.category}</span>
+          {n.data.draft && <span class="tag">下書き</span>}
+          <a href={`/news/${n.id}`}>{n.data.title}</a>
+          {n.data.summary && <div class="meta">{n.data.summary}</div>}
+        </li>
+      ))}
+    </ul>
+  ) : <p>現在お知らせはありません。</p>}
+</Base>

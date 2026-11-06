@@ -1,0 +1,8 @@
+---
+// 原稿が未確定の箇所に置く目印。本番切替前に npm run check:todo で残りを確認する。
+const { label = '原稿未入力' } = Astro.props;
+---
+<div class="todo" data-todo>
+  <strong>【{label}】</strong>
+  <slot />
+</div>

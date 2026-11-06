@@ -1,0 +1,17 @@
+# アステール総合美術研究所
+
+> 静岡県三島市の美術研究所。美大・芸大受験の予備校、おとなの教室、こどもの教室を開いています。
+
+（原稿未入力：公開前に、所在地・駅からの所要時間・対象・主な合格実績を3〜5行で追記する。src/data/site.ts と同じ表記にすること）
+
+## 主なページ
+
+- [アステールとは](https://www.astale-art.com/about): 指導方針・沿革・講師
+- [受験生の教室](https://www.astale-art.com/exam): 美大・芸大受験のコースと時間割
+- [おとなの教室](https://www.astale-art.com/adult): 大人向けの絵画・デッサン教室
+- [こどもの教室](https://www.astale-art.com/kids): 子ども向けの美術教室
+- [総合案内・学費](https://www.astale-art.com/guide): 学費と入会の流れ
+- [合格実績](https://www.astale-art.com/results): 年度別・大学別の合格者数
+- [よくある質問](https://www.astale-art.com/faq)
+- [お知らせ](https://www.astale-art.com/news): 講習会・教室のお知らせ
+- [お問い合わせ](https://www.astale-art.com/contact)

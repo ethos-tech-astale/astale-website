@@ -1,0 +1,90 @@
+---
+import { site, nav } from '../data/site';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  /** ページ固有の構造化データ（JSON-LD）。学校全体の情報は自動で入る */
+  jsonLd?: Record<string, unknown> | Record<string, unknown>[];
+}
+
+const { title, description = site.description, jsonLd } = Astro.props;
+const isHome = Astro.url.pathname === '/' || Astro.url.pathname === '/index';
+const fullTitle = isHome ? `${site.name}｜三島市の美大受験・美術教室` : `${title}｜${site.name}`;
+const canonical = new URL(isHome ? '/' : Astro.url.pathname.replace(/\.html$/, ''), site.url).href;
+
+const address: Record<string, string> = {
+  '@type': 'PostalAddress',
+  addressCountry: 'JP',
+  addressRegion: site.address.region,
+  addressLocality: site.address.locality,
+};
+if (site.address.street) address.streetAddress = site.address.street;
+if (site.address.postalCode) address.postalCode = site.address.postalCode;
+
+const org: Record<string, unknown> = {
+  '@context': 'https://schema.org',
+  '@type': ['EducationalOrganization', 'LocalBusiness'],
+  '@id': `${site.url}/#organization`,
+  name: site.name,
+  url: site.url,
+  description: site.description,
+  address,
+};
+if (site.telephone) org.telephone = site.telephone;
+if (site.instagram) org.sameAs = [site.instagram];
+
+const ld = [org, ...(jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [])];
+const current = Astro.url.pathname.replace(/\.html$/, '');
+---
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:type" content={isHome ? 'website' : 'article'} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:site_name" content={site.name} />
+    <meta property="og:locale" content="ja_JP" />
+    <link rel="sitemap" href="/sitemap.xml" />
+    <script type="application/ld+json" set:html={JSON.stringify(ld)} />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap header-inner">
+        <a class="logo" href="/">{site.name}</a>
+        <nav aria-label="メインメニュー">
+          <ul>
+            {nav.map((n) => (
+              <li><a href={n.href} aria-current={current === n.href ? 'page' : undefined}>{n.label}</a></li>
+            ))}
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <p class="footer-name">{site.name}</p>
+        <p>
+          {site.address.postalCode && <>〒{site.address.postalCode} </>}
+          {site.address.region}{site.address.locality}{site.address.street}
+        </p>
+        {site.access && <p>{site.access}</p>}
+        {site.telephone && <p>TEL <a href={`tel:${site.telephone}`}>{site.telephone}</a></p>}
+        <p><a href="/contact">お問い合わせ</a>{site.instagram && <> ／ <a href={site.instagram} rel="noopener">Instagram</a></>}</p>
+        <p class="copy">© {site.name}</p>
+      </div>
+    </footer>
+  </body>
+</html>
