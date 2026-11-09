@@ -25,18 +25,49 @@
 /tuition-guidance  /guide  301
 /result  /results  301
 
-# ---- 保留（要確認）：転送先のページが未決定のため301は書かない（docs/url-map.md） ----
-# 旧スラッグ: /公式 /obの就職先 /ob-01 /yamane-02 /複製-ymane /sugimoto-02 /受験部詳細 /受験基礎
-#   /基礎の教室 /こどもの教室詳細 /photoreco /複製-受験生の教室 /空き状況 /スタッフ紹介 /recruit /求人
-#   /lineオープンチャット /新型コロナウイルス対応 /2025regulation /複製-2024regulation /複製-summerkids2024
-# 現行パス: /examination-about /art-exam /exam-basic /basic /kids-about /availability /graduates
-#   /interview-* /staff /staff/* /photo /official /line-openchat /recruit-children /recruit-model
-#   /covid-19 /demo /2026regulation /2024regulation /2024winter /summer2024 /summerkids2024 /summerkids2024out
+# 担当者の確認シート（2026-11-09回答）で残すと決まったページへの旧スラッグ。
+# 転送先はWixと同じURLで新サイトに作る（ページ作成までは転送先が404になる）
+/%E5%85%AC%E5%BC%8F  /official  301
+/ob%E3%81%AE%E5%B0%B1%E8%81%B7%E5%85%88  /graduates  301
+/ob-01  /graduates  301
+/yamane-02  /interview-yamane  301
+/sugimoto-02  /interview-sugimoto  301
+/%E5%8F%97%E9%A8%93%E9%83%A8%E8%A9%B3%E7%B4%B0  /art-exam  301
+/%E5%8F%97%E9%A8%93%E5%9F%BA%E7%A4%8E  /exam-basic  301
+/%E5%9F%BA%E7%A4%8E%E3%81%AE%E6%95%99%E5%AE%A4  /basic  301
+/%E3%81%93%E3%81%A9%E3%82%82%E3%81%AE%E6%95%99%E5%AE%A4%E8%A9%B3%E7%B4%B0  /kids-about  301
+/%E7%A9%BA%E3%81%8D%E7%8A%B6%E6%B3%81  /availability  301
+/%E3%82%B9%E3%82%BF%E3%83%83%E3%83%95%E7%B4%B9%E4%BB%8B  /staff  301
+/recruit  /recruit-children  301
+/%E6%B1%82%E4%BA%BA  /recruit-children  301
+
+# 新サイトに載せないページ（確認シートで「やめる」）→ 関連ページへ
+/photo  /  301
+/photoreco  /  301
+/covid-19  /  301
+/%E6%96%B0%E5%9E%8B%E3%82%B3%E3%83%AD%E3%83%8A%E3%82%A6%E3%82%A4%E3%83%AB%E3%82%B9%E5%AF%BE%E5%BF%9C  /  301
+/line-openchat  /official  301
+/line%E3%82%AA%E3%83%BC%E3%83%97%E3%83%B3%E3%83%81%E3%83%A3%E3%83%83%E3%83%88  /official  301
+/2024regulation  /2026regulation  301
+/2025regulation  /2026regulation  301
+/%E8%A4%87%E8%A3%BD-2024regulation  /2026regulation  301
+/2024winter  /news  301
+/summer2024  /news  301
+/summerkids2024  /news  301
+/summerkids2024out  /news  301
+/%E8%A4%87%E8%A3%BD-summerkids2024  /news  301
+
+# ---- 保留（要確認）：転送先が未決定のため301は書かない（docs/url-map.md） ----
+# /demo /複製-受験生の教室（担当者の確認待ち） /複製-ymane（/yamane02 の現存未確認） 奥村さんのインタビュー（URL未確認）
 
 # ブログ記事（Wix: /post/〜）
-/post/%E5%86%AC%E6%9C%9F%E8%AC%9B%E7%BF%92%E4%BC%9A2025  /news/winter-course-2025  301
 /post/%E5%A4%8F%E6%9C%9F%E8%AC%9B%E7%BF%92%E4%BC%9A2026  /news/summer-course-2026  301
 /post/%E3%81%93%E3%81%A9%E3%82%82-%E5%A4%8F%E3%81%AE%E7%89%B9%E5%88%A5%E6%95%99%E5%AE%A4%EF%BC%92%EF%BC%90%EF%BC%92%EF%BC%96  /news/kids-summer-2026  301
+
+# 入試結果報告（確認シートで「合格実績にまとめる」）
+/post/%EF%BC%92%EF%BC%90%EF%BC%92%EF%BC%95%E5%B9%B4%E5%BA%A6%E7%BE%8E%E5%A4%A7%E5%8F%97%E9%A8%93%E5%85%A5%E8%A9%A6-%E7%B5%90%E6%9E%9C%E5%A0%B1%E5%91%8A-1  /results  301
+/post/2024%E5%B9%B4%E5%BA%A6%E7%BE%8E%E5%A4%A7%E5%8F%97%E9%A8%93%E5%85%A5%E8%A9%A6-%E7%B5%90%E6%9E%9C%E5%A0%B1%E5%91%8A  /results  301
+/post/2023%E5%B9%B4%E5%BA%A6%E7%BE%8E%E5%A4%A7%E5%8F%97%E9%A8%93%E5%85%A5%E8%A9%A6-%E7%B5%90%E6%9E%9C%E5%A0%B1%E5%91%8A  /results  301
 
 # 個別に移さない古い記事・ブログ一覧はお知らせ一覧へ（最後に置く）
 /blog  /news  301
