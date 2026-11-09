@@ -9,6 +9,22 @@
 /%E3%81%8A%E3%81%A8%E3%81%AA%E3%81%AE%E6%95%99%E5%AE%A4  /adult  301
 /contact-5  /contact  301
 
+# 現行Wixの主要ページ（英字の実URL）→ 新URL
+/astale-about  /about  301
+/examination  /exam  301
+/tuition-guidance  /guide  301
+/result  /results  301
+
+# Wixの既存301（転送の転送にならないよう、最終の新URLへ直接つなぐ）
+/home  /  301
+/blank  /  301
+/%E5%86%AC%E6%9C%9F%E8%AC%9B%E7%BF%92%E4%BC%9A  /  301
+/%E3%81%93%E3%81%A9%E3%82%82%E3%81%AE%E6%95%99%E5%AE%A4  /kids  301
+/result01  /results  301
+/result02  /results  301
+/%E5%8F%97%E9%A8%93%E5%AE%9F%E7%B8%BE  /results  301
+/%E8%A4%87%E8%A3%BD-%E5%8F%97%E9%A8%93%E5%AE%9F%E7%B8%BE  /results  301
+
 # ブログ記事（Wix: /post/〜）
 /post/%E5%86%AC%E6%9C%9F%E8%AC%9B%E7%BF%92%E4%BC%9A2025  /news/winter-course-2025  301
 /post/%E5%A4%8F%E6%9C%9F%E8%AC%9B%E7%BF%92%E4%BC%9A2026  /news/summer-course-2026  301

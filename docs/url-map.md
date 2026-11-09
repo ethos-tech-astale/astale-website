@@ -1,19 +1,26 @@
 # 旧URL → 新URL 対応表
 
 転送設定の実体は `public/_redirects`。この表と必ず一致させる。
-**現時点では検索結果から分かった分のみ。** Wix の `https://www.astale-art.com/sitemap.xml` から全URLを洗い出して追記すること（ブログは17記事あるはず）。
+Wix の全ページ（静的36・ブログ15・既存301転送34件）は `docs/wix_site_survey.md` を参照。**現時点では転送先が決まっているページのみ。** 残りは担当者向け確認シートの回答後に追記する。
 
 | 旧URL（Wix） | 新URL | 状態 |
 |---|---|---|
 | `/` | `/` | 同じ |
-| `/アステールとは` | `/about` | 転送設定済み |
-| `/総合案内-学費` | `/guide` | 転送設定済み |
-| `/受験生の教室` | `/exam` | 転送設定済み |
-| `/おとなの教室` | `/adult` | 転送設定済み。※`/adult` が既に存在するかWixで要確認 |
-| `/adult` | `/adult` | 同じ（要確認） |
-| `/kids` | `/kids` | 同じ（要確認） |
-| `/results` | `/results` | 同じ（要確認） |
-| `/contact-5` | `/contact` | 転送設定済み |
+| `/home` `/blank` `/冬期講習会` | `/` | 転送設定済み（Wixの既存301） |
+| `/astale-about` | `/about` | 転送設定済み（Wixの実URL） |
+| `/アステールとは` | `/about` | 転送設定済み（Wixの既存301） |
+| `/examination` | `/exam` | 転送設定済み（Wixの実URL） |
+| `/受験生の教室` | `/exam` | 転送設定済み（Wixの既存301） |
+| `/tuition-guidance` | `/guide` | 転送設定済み（Wixの実URL） |
+| `/総合案内-学費` | `/guide` | 転送設定済み（Wixの既存301） |
+| `/result` | `/results` | 転送設定済み（Wixの実URL） |
+| `/result01` `/result02` `/受験実績` `/複製-受験実績` | `/results` | 転送設定済み（Wixの既存301） |
+| `/adult` | `/adult` | 同じ |
+| `/おとなの教室` | `/adult` | 転送設定済み（Wixの既存301） |
+| `/kids` | `/kids` | 同じ |
+| `/こどもの教室` | `/kids` | 転送設定済み（Wixの既存301） |
+| `/contact` | `/contact` | 同じ |
+| `/contact-5` | `/contact` | 転送設定済み（Wixの既存301） |
 | `/post/冬期講習会2025` | `/news/winter-course-2025` | 転送設定済み・本文未移行（draft） |
 | `/post/夏期講習会2026` | `/news/summer-course-2026` | 転送設定済み・本文未移行（draft） |
 | `/post/こども-夏の特別教室２０２６` | `/news/kids-summer-2026` | 転送設定済み・本文未移行（draft） |
