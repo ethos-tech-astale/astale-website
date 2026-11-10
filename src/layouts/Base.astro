@@ -5,11 +5,14 @@ import '../styles/global.css';
 interface Props {
   title: string;
   description?: string;
+  /** ページ固有の共有画像（og:image）。未指定なら site.ogImage */
+  image?: string;
   /** ページ固有の構造化データ（JSON-LD）。学校全体の情報は自動で入る */
   jsonLd?: Record<string, unknown> | Record<string, unknown>[];
 }
 
-const { title, description = site.description, jsonLd } = Astro.props;
+const { title, description = site.description, image = site.ogImage ?? undefined, jsonLd } = Astro.props;
+const ogImage = image ? new URL(image, site.url).href : null;
 const isHome = Astro.url.pathname === '/' || Astro.url.pathname === '/index';
 const fullTitle = isHome ? `${site.name}｜三島市の美大受験・美術教室` : `${title}｜${site.name}`;
 const canonical = new URL(isHome ? '/' : Astro.url.pathname.replace(/\.html$/, ''), site.url).href;
@@ -33,7 +36,8 @@ const org: Record<string, unknown> = {
   address,
 };
 if (site.telephone) org.telephone = site.telephone;
-if (site.instagram) org.sameAs = [site.instagram];
+const sameAs = [site.instagram, site.line].filter(Boolean);
+if (sameAs.length) org.sameAs = sameAs;
 
 const ld = [org, ...(jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [])];
 const current = Astro.url.pathname.replace(/\.html$/, '');
@@ -52,6 +56,8 @@ const current = Astro.url.pathname.replace(/\.html$/, '');
     <meta property="og:url" content={canonical} />
     <meta property="og:site_name" content={site.name} />
     <meta property="og:locale" content="ja_JP" />
+    {ogImage && <meta property="og:image" content={ogImage} />}
+    {ogImage && <meta name="twitter:card" content="summary_large_image" />}
     <link rel="sitemap" href="/sitemap.xml" />
     <script type="application/ld+json" set:html={JSON.stringify(ld)} />
   </head>
