@@ -39,7 +39,7 @@
 | `/interview-asakura` | `/interview-asakura` | Wixと同じURLで作る | 本人の掲載許可は確認済み。実名・写真とも今と同じ |
 | `/interview-sugimoto` | `/interview-sugimoto` | Wixと同じURLで作る | 同上 |
 | `/interview-yamane` | `/interview-yamane` | Wixと同じURLで作る | 同上 |
-| 奥村さんのインタビュー（スラッグ未確認） | — | **要確認** | 載せる・掲載許可は確認済み。URLが未確認のため、Wixの管理画面で確認する |
+| `/interview-okumura` | `/interview-okumura` | Wixと同じURLで作る | 同上。URLは `/graduates` のリンクから判明（2026-11-10） |
 | `/staff` | `/staff` | Wixと同じURLで作る | スタッフ紹介。載せてよい内容（氏名・経歴・顔写真など）は未回答 |
 | `/staff/tamura` | `/staff/tamura` | Wixと同じURLで作る | 一人ずつのページを残す。載せてよい内容は未回答 |
 | `/staff/noro` | `/staff/noro` | Wixと同じURLで作る | 同上 |
@@ -127,7 +127,7 @@ Wix の SEO リダイレクト（報告書5章）を、チェーンを最終URL�
 
 ## 4. 補足
 
-- 未確認の点：奥村さんのインタビューページのスラッグ、`/yamane02` の現存、`/demo` の扱い、メニュー階層。
+- 未確認の点：`/yamane02` の現存、`/demo` の扱い、メニュー階層。
 - 「Wixと同じURLで作る」ページと `/news/〜` の記事は、作成するまで転送先が404になる。本番切替前にすべて作る。
 - 日本語URLは `_redirects` ではパーセントエンコードで書く（Python: `urllib.parse.quote('/受験生の教室')`）。
 - 記事の draft を false にするまで、転送先の `/news/〜` は本番に存在しない。本番切替前に全記事を移すか、転送先を `/news` に変える。
