@@ -8,6 +8,10 @@
 
 - [アステールとは](https://www.astale-art.com/about): 指導方針・沿革・講師
 - [受験生の教室](https://www.astale-art.com/exam): 美大・芸大受験のコースと時間割
+  - [受験の教室について](https://www.astale-art.com/examination-about): 受験生の教室の教育方針
+  - [アステールの美大受験](https://www.astale-art.com/art-exam): 卒業生からの情報、独自のデッサン理論・色彩学・構成学、教養講座、地元・静岡で学ぶ利点
+  - [受験・基礎の教室 概要](https://www.astale-art.com/exam-basic): 美大受験教室・基礎教室の授業日と時間、画材、アトリエ利用上の注意
+  - [基礎の教室](https://www.astale-art.com/basic): 中学生・高校生向けに、デッサン・色彩・構成などアート・デザインの基礎を学ぶ教室
 - [おとなの教室](https://www.astale-art.com/adult): 大人向けの絵画・デッサン教室
 - [こどもの教室](https://www.astale-art.com/kids): 子ども向けの美術教室
 - [総合案内・学費](https://www.astale-art.com/guide): 学費と入会の流れ
