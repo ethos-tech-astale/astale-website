@@ -1,0 +1,54 @@
+---
+import Base from '../layouts/Base.astro';
+import { site } from '../data/site';
+const address = `${site.address.region}${site.address.locality}${site.address.street ?? ''}`;
+---
+<Base title="求人　絵画人物モデル" description="アステール総合美術研究所では、美大受験対策や大人のデッサン・絵画の授業でポーズをとっていただく絵画人物モデル（着衣）を募集しています。">
+  <h1>求人　絵画人物モデル</h1>
+
+  <p>{site.name}では、絵画人物モデルを募集しています。</p>
+  <p>※アステールOB・OGからの応募を優遇します</p>
+
+  <h2>仕事内容</h2>
+  <p>{site.name}の絵画人物モデルです。</p>
+  <p>中学生から高校生、浪人生を対象にした美大受験対策の制作、また大人を対象にしたデッサンや絵画のモデルとしてポーズをとっていただきます。</p>
+  <p>基本、1日単位（7時間、休憩1時間）での依頼となります。</p>
+  <p>ポーズ中は参考資料として写真撮影させていただきます。</p>
+  <p>応募いただいた方はモデルリストに登録させていただき、モデルが必要なタイミングで条件の合う方にご連絡いたします。</p>
+
+  <h2>条件</h2>
+  <ul>
+    <li>責任感のある方</li>
+    <li>私服または指定の衣装での着衣（ヌードではありません）</li>
+    <li>6時間ポーズを保つ体力のある方（例：20分ポーズ＋5〜10分休憩を6〜12セット、短時間クロッキーなど）</li>
+    <li>17歳以上の心身が健康な方 ※性別は問いません</li>
+    <li>LINEで連絡が取れる方</li>
+  </ul>
+
+  <h2>募集要項</h2>
+  <table>
+    <tbody>
+      <tr><th scope="row">報酬</th><td>日給 9,000円（交通費およびポーズ撮影含む）</td></tr>
+      <tr><th scope="row">勤務時間帯</th><td>9:00〜21:00の間の7時間（休憩1時間）</td></tr>
+      <tr><th scope="row">勤務場所</th><td>{site.name}（{address}）</td></tr>
+    </tbody>
+  </table>
+
+  <h2>優遇条件</h2>
+  <ul>
+    <li>長期でスタンバイできる方</li>
+    <li>アステールOB・OG</li>
+  </ul>
+  <p>上記のいずれかに該当する方は優遇いたします。</p>
+
+  <h2>お申し込み方法</h2>
+  <table>
+    <thead>
+      <tr><th scope="col">応募される方</th><th scope="col">連絡先</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>アステールOB・OGの方</td><td>アステール公式LINE（卒業生用）<br />ID：@336iehhu</td></tr>
+      <tr><td>アステールのOB・OGでない方</td><td>アステール公式LINE（お問合わせ）<br />ID：@270pjyfi</td></tr>
+    </tbody>
+  </table>
+</Base>
