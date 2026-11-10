@@ -24,6 +24,7 @@
 - [求人　こどもの教室スタッフ](https://www.astale-art.com/recruit-children): アステールOBを対象とした、こどもの教室の運営スタッフの募集
 - [求人　絵画人物モデル](https://www.astale-art.com/recruit-model): 授業でポーズをとる絵画人物モデル（着衣）の募集
 - [総合案内・学費](https://www.astale-art.com/guide): 学費と入会の流れ
+  - [統一規約（2026）](https://www.astale-art.com/2026regulation): 入学・学費・休学・退学・画材などについての規約
 - [合格実績](https://www.astale-art.com/results): 年度別・大学別の合格者数
 - [よくある質問](https://www.astale-art.com/faq)
 - [お知らせ](https://www.astale-art.com/news): 講習会・教室のお知らせ
