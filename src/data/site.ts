@@ -33,5 +33,4 @@ export const nav = [
   { href: '/contact', label: 'お問い合わせ' },
 ];
 
-/** サイトマップに載せる固定ページ */
-export const staticPages = ['/', ...nav.map((n) => n.href)];
+// サイトマップ（/sitemap.xml）は src/pages/ のページから自動で作る（src/pages/sitemap.xml.ts）。

@@ -1,10 +1,18 @@
 import { getCollection } from 'astro:content';
-import { site, staticPages } from '../data/site';
+import { site } from '../data/site';
+
+// src/pages/ にある固定ページを自動で載せる（ページを追加しても、ここを直す必要はない）。
+// 404 と、[slug] のような動的ページ（お知らせ記事は下で個別に追加）は除く。
+const pageFiles = Object.keys(import.meta.glob('./**/*.astro'));
+const staticPages = pageFiles
+  .filter((f) => !f.includes('[') && f !== './404.astro')
+  .map((f) => f.replace(/^\./, '').replace(/\.astro$/, '').replace(/\/index$/, '') || '/')
+  .sort((a, b) => (a === '/' ? -1 : b === '/' ? 1 : a.localeCompare(b)));
 
 export async function GET() {
   const news = await getCollection('news', ({ data }) => !data.draft);
   const urls = [
-    ...staticPages.map((p) => `${site.url}${p === '/' ? '/' : p}`),
+    ...staticPages.map((p) => `${site.url}${p}`),
     ...news.map((n) => `${site.url}/news/${n.id}`),
   ];
   const xml =
