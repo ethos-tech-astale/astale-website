@@ -2,15 +2,45 @@
 import Base from '../layouts/Base.astro';
 import Todo from '../components/Todo.astro';
 import { site } from '../data/site';
+const address = `${site.address.region}${site.address.locality}${site.address.street ?? ''}`;
 ---
-<Base title="お問い合わせ" description="アステール総合美術研究所へのお問い合わせ・見学や体験のお申し込み。">
+<Base title="お問い合わせ" description="アステール総合美術研究所へのお問い合わせ・ご見学のご相談。公式LINE・お電話・メールで受け付けています。">
   <h1>お問い合わせ</h1>
-  <p>見学・体験のお申し込み、ご質問は下記のフォームからお送りください。</p>
-  {site.telephone && <p>お電話：<a href={`tel:${site.telephone}`}>{site.telephone}</a></p>}
+  <p>ご見学、ご相談はお気軽に。ご来校の際には、LINE・お電話・メールのいずれかでご一報ください。</p>
 
-  {site.contactFormUrl ? (
-    <iframe class="form-embed" src={site.contactFormUrl} title="お問い合わせフォーム" loading="lazy"></iframe>
-  ) : (
-    <Todo>Googleフォームを作成し、埋め込みURL（…/viewform?embedded=true）を src/data/site.ts の contactFormUrl に入力。送信テストと通知先の確認も行う。</Todo>
-  )}
+  <h2>アクセス</h2>
+  <p>{site.address.postalCode && <>〒{site.address.postalCode}　</>}{address}</p>
+  {site.access ? <p>{site.access}</p> : <Todo>駅からの所要時間：Wixのこのページには「三島広小路から徒歩1分」、郵便番号「411-0037」とある。src/data/site.ts の access・postalCode に入れると、ここと構造化データに表示される（site.ts の変更は管理者の確認が必要）。</Todo>}
+  <p>＜ご注意＞申し訳ございませんが、当研究所には駐車場がございません。お近くの有料駐車場（ヒロセパーキング、タイムスなど）にご駐車の上お越しくださいますよう、よろしくお願いいたします。</p>
+
+  <h2>お電話</h2>
+  {site.telephone && <p>TEL <a href={`tel:${site.telephone.replace(/-/g, '')}`}>{site.telephone}</a></p>}
+
+  <h2>公式LINE</h2>
+  {site.line && <p><a href={site.line}>アステール公式LINEを友だち追加する</a></p>}
+  <p>上のリンクをクリックするか、もしくはLINEのID検索で「@270pjyfi」と検索していただくと、アステール公式LINEを友だち追加できます。</p>
+  <p>※個別トークに対応していますので、お気軽にお問い合わせください。</p>
+
+  <h3>LINEでのお問い合わせの手順</h3>
+  <ol>
+    <li>上記より「アステール公式(お問合せ)」のLINEご登録をお願いいたします。</li>
+    <li>
+      トークルームの案内に沿って以下の内容をご記入ください。
+      <ul>
+        <li>お名前</li>
+        <li>年齢・学齢</li>
+        <li>ご住所（パンフレット送付をご希望の場合）</li>
+        <li>ご用件（例：「入学案内パンフレット希望」「〇〇講習会案内希望」「〇〇教室ご見学希望」「その他質問等 お問い合わせ」）</li>
+      </ul>
+    </li>
+    <li>ご質問内容はできるだけ具体的に詳しく（特に、ご質問に回答するために必要な情報は必ず入力して下さい）お願いします。</li>
+  </ol>
+  <p>なお、ご質問に対する返信までに数日かかる場合がございますのであらかじめご了承下さい。</p>
+
+  <h2>メール</h2>
+  <p><a href="mailto:info@astale-art.com">info@astale-art.com</a></p>
+  <ul>
+    <li>上記アドレスからお返事します。受信できるように設定をお願いいたします。</li>
+    <li>1週間程度お待ちいただいても当方からの返事が届かない場合、メールフィルターの設定などにより受信できていない可能性があります。大変お手数ですが、その際は{site.telephone}にお電話ください。</li>
+  </ul>
 </Base>
