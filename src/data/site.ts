@@ -11,11 +11,11 @@ export const site = {
     region: '静岡県',
     locality: '三島市',
     street: '泉町3-2' as string | null, // 出典: docs/wix_site_survey.md（トップページ公開表記）。ビル名・階数は未確認
-    postalCode: null as string | null, // 例: '411-0000'
+    postalCode: '411-0037' as string | null, // 出典: Wix「お問い合わせ」ページ（管理者確認済み 2026-11-10）
   },
   telephone: '055-971-7579' as string | null, // 出典: docs/wix_site_survey.md（トップページ公開表記）
   /** 最寄り駅からの所要時間（例: 'JR三島駅 南口から徒歩1分'）。Web上の表記はこれに統一する */
-  access: null as string | null,
+  access: '三島広小路から徒歩1分' as string | null, // 出典: Wix「お問い合わせ」ページ（管理者確認済み 2026-11-10）
   instagram: 'https://www.instagram.com/astale_art_official' as string | null, // 出典: docs/wix_site_survey.md
   /** 公式LINE */
   line: 'https://lin.ee/4gr1kzCK' as string | null, // 出典: docs/wix_site_survey.md
