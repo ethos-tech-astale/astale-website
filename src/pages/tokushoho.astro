@@ -1,0 +1,31 @@
+---
+import Base from '../layouts/Base.astro';
+import { site } from '../data/site';
+const address = `${site.address.postalCode ? `〒${site.address.postalCode} ` : ''}${site.address.region}${site.address.locality}${site.address.street ?? ''}`;
+---
+<Base title="特定商取引法に基づく表記" description="アステール総合美術研究所（有限会社アステール）の特定商取引法に基づく表記。販売業者、所在地、連絡先、販売価格、支払方法、キャンセル・解約について。">
+  <h1>特定商取引法に基づく表記</h1>
+
+  <table>
+    <tbody>
+      <tr><th scope="row">販売業者</th><td>有限会社アステール</td></tr>
+      <tr><th scope="row">代表者</th><td>代表取締役　眞鍋勝治</td></tr>
+      <tr><th scope="row">所在地</th><td>{address}</td></tr>
+      <tr><th scope="row">電話番号</th><td>{site.telephone}</td></tr>
+      <tr><th scope="row">メールアドレス</th><td><a href="mailto:info@astale-art.com">info@astale-art.com</a></td></tr>
+      <tr><th scope="row">販売価格</th><td>各講習会・特別教室のお知らせ、および<a href="/guide">総合案内・学費</a>に記載しています。</td></tr>
+      <tr><th scope="row">販売価格以外に必要な費用</th><td>画材費（各講習会・特別教室のお知らせ、および<a href="/guide">総合案内・学費</a>に記載しています）</td></tr>
+      <tr><th scope="row">支払方法</th><td>講習会・特別教室：クレジットカード決済<br />在籍生：口座からの自動引落</td></tr>
+      <tr><th scope="row">支払時期</th><td>講習会・特別教室：お申込時<br />在籍生：各お知らせに記載の引落日</td></tr>
+      <tr><th scope="row">サービスの提供時期</th><td>各講習会・特別教室のお知らせに記載の日程</td></tr>
+      <tr><th scope="row">キャンセル・解約</th><td><a href="/2026regulation">統一規約（2026）</a>第三条第4項（クーリング・オフ、中途解約）に定めるとおりです。</td></tr>
+    </tbody>
+  </table>
+
+  <h2>関連ページ</h2>
+  <ul>
+    <li><a href="/2026regulation">統一規約（2026）</a></li>
+    <li><a href="/guide">総合案内・学費</a></li>
+    <li><a href="/contact">お問い合わせ</a></li>
+  </ul>
+</Base>
